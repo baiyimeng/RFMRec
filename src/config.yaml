@@ -1,0 +1,36 @@
+# Basic experiment settings
+dataset: beauty  # Dataset name: toys, beauty, steam, ml-1m, baby
+model: rfmrec  # Model name
+description: _ # Model brief introduction
+random_seed: 2025  # Random seed
+log_file: logs/  # log dir path
+
+# Data processing parameters
+max_len: 50 # The max length of sequence
+batch_size: 512  # Batch Size
+
+# Model architecture parameters
+hidden_size: 128  # hidden size of model
+num_blocks: 4  # Number of transformer blocks
+num_heads: 4  # Number of attention heads
+dropout: 0.1  # Dropout of dense representation
+emb_dropout: 0.3  # Dropout of item embedding
+is_causal: true  # Use causal attention
+pre_norm: false  # Use prenorm transformer
+pretrained: false # Use pretrained embedding weight
+freeze_emb: false # Freezing embedding weight
+
+# Training hyperparameters
+epochs: 500 # Number of epochs for training
+lr: 0.001  # Learning rate
+weight_decay: 0.0  # L2 regularization
+decay_step: 100  # Decay step for StepLR
+gamma: 0.1  # Gamma for StepLR
+
+# Evaluation settings
+eval_interval: 5  # The number of epoch to eval
+patience: 4  # The number of epoch to wait before early stop
+
+# Hardware and deployment
+device: cuda:0  # Device selection
+sample_steps: 2  # Sampling step
